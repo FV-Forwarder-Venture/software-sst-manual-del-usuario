@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Usuario | Forwarder Venture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        
+        /* COLORES PERSONALIZADOS BASADOS EN EL LOGO */
+        :root {
+            --fv-navy: #0F172A; /* Azul oscuro del texto "FORWARDER" */
+            --fv-orange: #F97316; /* Naranja del isotipo */
+        }
+
+        .text-navy { color: var(--fv-navy); }
+        .bg-navy { background-color: var(--fv-navy); }
+        .text-orange-fv { color: var(--fv-orange); }
+        .bg-orange-fv { background-color: var(--fv-orange); }
+        .border-orange-fv { border-color: var(--fv-orange); }
+
+        .sidebar-link { transition: all 0.3s; border-left: 4px solid transparent; }
+        /* Efecto Hover y Activo con Naranja Corporativo */
+        .sidebar-link:hover, .sidebar-link.active { 
+            background-color: #fff7ed; /* Naranja muy suave */
+            border-left-color: var(--fv-orange); 
+            color: #c2410c; 
+            font-weight: 600;
+        }
+        
+        code { background-color: #f3f4f6; padding: 2px 4px; border-radius: 4px; color: var(--fv-navy); font-family: monospace; border: 1px solid #e5e7eb; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white text-navy shadow-md fixed w-full z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <img src="logo.png" alt="Forwarder Venture Logo" class="h-12 w-auto object-contain">
+            </div>
+            <div class="text-xs font-bold bg-navy text-white py-1 px-3 rounded-full uppercase tracking-wider">
+                Manual v1.0
+            </div>
+        </div>
+    </header>
+
+    <div class="flex pt-20 h-screen overflow-hidden">
+        
+        <aside class="w-64 bg-white border-r border-gray-200 hidden md:block overflow-y-auto">
+            <nav class="py-6 space-y-1">
+                <a href="#intro" class="sidebar-link active block px-6 py-3 text-sm text-gray-600">
+                    <i class="fas fa-home w-5 mr-2"></i> Introducción
+                </a>
+                <a href="#acceso" class="sidebar-link block px-6 py-3 text-sm text-gray-600">
+                    <i class="fas fa-shield-alt w-5 mr-2"></i> 1. Acceso y Seguridad
+                </a>
+                <a href="#configuracion" class="sidebar-link block px-6 py-3 text-sm text-gray-600">
+                    <i class="fas fa-building w-5 mr-2"></i> 2. Configuración Empresa
+                </a>
+                <a href="#dashboard" class="sidebar-link block px-6 py-3 text-sm text-gray-600">
+                    <i class="fas fa-chart-pie w-5 mr-2"></i> 3. El Dashboard
+                </a>
+                <a href="#gestion" class="sidebar-link block px-6 py-3 text-sm text-gray-600">
+                    <i class="fas fa-sync-alt w-5 mr-2"></i> 4. Gestión PHVA
+                </a>
+                <a href="#documentos" class="sidebar-link block px-6 py-3 text-sm text-gray-600">
+                    <i class="fas fa-file-contract w-5 mr-2"></i> 5. Documentación ISO
+                </a>
+                <a href="#reportes" class="sidebar-link block px-6 py-3 text-sm text-gray-600">
+                    <i class="fas fa-download w-5 mr-2"></i> 6. Descargas
+                </a>
+            </nav>
+        </aside>
+
+        <main class="flex-1 overflow-y-auto p-8 scroll-smooth">
+            <div class="max-w-5xl mx-auto">
+
+                <section id="intro" class="mb-16">
+                    <h1 class="text-4xl font-extrabold text-navy mb-4">Manual de Usuario SG-SST</h1>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Bienvenido a la plataforma de gestión de <strong>Forwarder Venture</strong>. Este sistema ha sido diseñado para simplificar, documentar y validar el cumplimiento de los estándares mínimos (Res. 0312) con un enfoque en la eficiencia y la seguridad legal.
+                    </p>
+                    <div class="mt-6 bg-orange-50 border-l-4 border-orange-fv p-4 rounded-r-lg">
+                        <p class="font-bold text-orange-800">Licencia Activa:</p>
+                        <p class="text-sm text-orange-900">Su suscripción incluye soporte para hasta <strong>3 dispositivos</strong> simultáneos.</p>
+                    </div>
+                </section>
+
+                <hr class="border-gray-200 my-10">
+
+                <section id="acceso" class="mb-16 scroll-mt-24">
+                    <h2 class="text-2xl font-bold text-navy mb-6 flex items-center">
+                        <span class="bg-navy text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">1</span>
+                        Acceso y Seguridad
+                    </h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="font-bold text-gray-800 border-b pb-2 mb-3">Inicio de Sesión</h3>
+                            <ul class="list-disc ml-5 text-gray-600 space-y-2 text-sm">
+                                <li>Ingrese a la URL proporcionada con su <strong>Usuario</strong> y <strong>Contraseña</strong>.</li>
+                                <li><strong>Primer Ingreso:</strong> El sistema le exigirá cambiar su contraseña temporal por una personal.</li>
+                                <li><strong>Recuperación:</strong> Use el enlace "¿Olvidaste tu contraseña?" si pierde el acceso.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-100 p-5 rounded-lg border border-gray-200">
+                            <h3 class="font-bold text-red-700 flex items-center mb-2">
+                                <i class="fas fa-ban mr-2"></i> Límite de Dispositivos
+                            </h3>
+                            <p class="text-sm text-gray-700">
+                                Por seguridad, solo puede tener 3 sesiones abiertas (ej. Oficina, Casa, Celular). Si intenta abrir una cuarta, el sistema <strong>bloqueará el acceso</strong> automáticamente.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="border-gray-200 my-10">
+
+                <section id="configuracion" class="mb-16 scroll-mt-24">
+                    <h2 class="text-2xl font-bold text-navy mb-6 flex items-center">
+                        <span class="bg-navy text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">2</span>
+                        Configuración de la Empresa
+                    </h2>
+                    <p class="text-gray-600 mb-6">Para que los documentos legales sean válidos, debe configurar su identidad corporativa.</p>
+
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="flex-1 bg-white p-6 shadow-sm rounded-xl border-t-4 border-orange-fv">
+                            <div class="text-orange-fv text-2xl mb-2"><i class="fas fa-id-card"></i></div>
+                            <h4 class="font-bold text-navy mb-2">Datos y Logo</h4>
+                            <p class="text-sm text-gray-600">
+                                Ingrese a <strong>Configuración</strong> en el menú superior. Cargue su <strong>Logo (PNG)</strong>, Razón Social y NIT. Estos aparecerán en el encabezado de todos los PDFs.
+                            </p>
+                        </div>
+                        <div class="flex-1 bg-white p-6 shadow-sm rounded-xl border-t-4 border-navy">
+                            <div class="text-navy text-2xl mb-2"><i class="fas fa-file-signature"></i></div>
+                            <h4 class="font-bold text-navy mb-2">Firma Digital</h4>
+                            <p class="text-sm text-gray-600">
+                                Use el módulo de firma para dibujar la rúbrica del Representante Legal. Sin esto, los documentos saldrán sin validez jurídica.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="border-gray-200 my-10">
+
+                <section id="dashboard" class="mb-16 scroll-mt-24">
+                    <h2 class="text-2xl font-bold text-navy mb-6 flex items-center">
+                        <span class="bg-navy text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">3</span>
+                        El Dashboard (Panel de Control)
+                    </h2>
+                    
+                    <div class="mb-8 border rounded-lg shadow-lg overflow-hidden">
+                        <img src="Captura del Dashboard.jpg" alt="Captura de Pantalla del Dashboard Forwarder Venture" class="w-full h-auto">
+                        <div class="bg-gray-50 p-2 text-center text-xs text-gray-500 italic border-t">
+                            Vista general del panel de control con indicadores en tiempo real.
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="p-4 bg-white border rounded-lg shadow-sm">
+                            <span class="text-blue-600 font-bold text-xl block mb-1">Progreso Global</span>
+                            <p class="text-sm text-gray-600">Muestra el % de avance total del sistema.</p>
+                        </div>
+                        <div class="p-4 bg-white border rounded-lg shadow-sm">
+                            <span class="text-green-600 font-bold text-xl block mb-1">Ítems Cumplidos</span>
+                            <p class="text-sm text-gray-600">Contador de requisitos aprobados vs total.</p>
+                        </div>
+                        <div class="p-4 bg-white border rounded-lg shadow-sm">
+                            <span class="text-orange-600 font-bold text-xl block mb-1">Cronograma</span>
+                            <p class="text-sm text-gray-600">Tabla inferior con tareas del mes en curso.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="border-gray-200 my-10">
+
+                <section id="gestion" class="mb-16 scroll-mt-24">
+                    <h2 class="text-2xl font-bold text-navy mb-6 flex items-center">
+                        <span class="bg-navy text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">4</span>
+                        Gestión del Ciclo PHVA
+                    </h2>
+                    <p class="text-gray-600 mb-6">
+                        Ingrese a cualquiera de las 4 fases (Planear, Hacer, Verificar, Actuar) para gestionar los estándares.
+                    </p>
+
+                    <div class="bg-white rounded-lg shadow overflow-hidden border">
+                        <table class="min-w-full text-sm">
+                            <thead class="bg-navy text-white">
+                                <tr>
+                                    <th class="px-6 py-3 text-left">Herramienta</th>
+                                    <th class="px-6 py-3 text-left">Función</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-bold text-navy">
+                                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Cumple / No Cumple</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-gray-600">Califique el estado actual del ítem. El sistema guarda automáticamente.</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-bold text-navy">
+                                        <i class="fas fa-file-pdf text-red-600 mr-2"></i> Generar
+                                    </td>
+                                    <td class="px-6 py-4 text-gray-600">Crea el documento oficial en PDF con encabezado, logo y firma.</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-bold text-navy">
+                                        <i class="fas fa-paperclip text-gray-500 mr-2"></i> Adjuntar
+                                    </td>
+                                    <td class="px-6 py-4 text-gray-600">Suba evidencias (fotos, planillas escaneadas) para soportar el ítem.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section id="documentos" class="mb-16 scroll-mt-24">
+                    <h2 class="text-2xl font-bold text-navy mb-6 flex items-center">
+                        <span class="bg-navy text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">5</span>
+                        Estándar Documental (ISO)
+                    </h2>
+                    <div class="flex items-start bg-blue-50 p-6 rounded-lg border border-blue-100">
+                        <div class="mr-4 text-blue-800 text-3xl"><i class="fas fa-award"></i></div>
+                        <div>
+                            <h4 class="font-bold text-blue-900 mb-2">Encabezado Automático Inteligente</h4>
+                            <p class="text-sm text-blue-800 mb-2">
+                                Forwarder Venture genera documentos que cumplen normas de calidad. Cada PDF incluye automáticamente:
+                            </p>
+                            <ul class="list-disc ml-5 text-sm text-blue-700">
+                                <li><strong>Columna Izq:</strong> Su Logo Corporativo.</li>
+                                <li><strong>Columna Central:</strong> Título del Sistema y Nombre de la Empresa.</li>
+                                <li><strong>Columna Der:</strong> Código, Versión, Fecha y Paginación.</li>
+                            </ul>
+                            <p class="mt-3 text-xs text-blue-600 font-bold uppercase">
+                                * El título del documento se separa del encabezado para garantizar legibilidad.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="reportes" class="mb-16 scroll-mt-24">
+                    <h2 class="text-2xl font-bold text-navy mb-6 flex items-center">
+                        <span class="bg-navy text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">6</span>
+                        Descargas Masivas
+                    </h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:border-orange-fv transition group bg-white">
+                            <div class="text-orange-fv text-4xl mb-4 group-hover:scale-110 transition-transform"><i class="fas fa-file-archive"></i></div>
+                            <h3 class="font-bold text-navy text-lg">Descargar Todo (.ZIP)</h3>
+                            <p class="text-sm text-gray-500 mt-2">
+                                Crea un archivo comprimido con TODOS los documentos del sistema en un solo clic. Ideal para backups.
+                            </p>
+                        </div>
+                        <div class="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:border-navy transition group bg-white">
+                            <div class="text-navy text-4xl mb-4 group-hover:scale-110 transition-transform"><i class="fas fa-clipboard-list"></i></div>
+                            <h3 class="font-bold text-navy text-lg">Reporte 0312</h3>
+                            <p class="text-sm text-gray-500 mt-2">
+                                Genera la tabla de autoevaluación oficial con semáforo de cumplimiento.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+            
+            <footer class="mt-20 border-t pt-10 text-center pb-10 bg-gray-50">
+                <img src="logo.png" alt="Logo Footer" class="h-8 mx-auto mb-4 opacity-50 grayscale hover:grayscale-0 transition">
+                <p class="text-sm text-gray-500">&copy; 2026 Forwarder Venture. Todos los derechos reservados.</p>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Actualizar activo visualmente
+                document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
